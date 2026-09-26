@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Check Your Email - NYSC Connect</title>
+<link rel="stylesheet" href="verify.css">
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#" class="logo">
+        <img src="https://i.ibb.co/p6WG6hxD/NYSC-Connect-Logo.png" alt="NYSC Connect Logo" />
+        <span class="logo-text"><strong>NYSC</strong> Connect</span>
+      </a>
+      <nav class="nav">
+        <a href="../landing-page/index.html" class="nav-link">Home</a>
+        <a href="#" class="nav-link">Find Accommodation</a>
+        <a href="#" class="nav-link">Community</a>
+        <a href="#" class="nav-link">Explore</a>
+        <a href="#" class="nav-link">Landlord</a>
+        <a href="#" class="nav-link">About</a>
+      </nav>
+      <div class="header-actions">
+        <a href="../login-to-your-account/login.html" class="link-login">Log In</a>
+        <a href="../create-your-account/signup.html" class="btn btn-primary">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== VERIFY SECTION ===== -->
+  <section class="verify-section">
+    <div class="container verify-inner">
+
+      <!-- Left: image + copy -->
+      <div class="verify-visual">
+        <div class="verify-photo">
+          <img src="https://i.ibb.co/4GrvZbW/d5082b9f9dd3f836061847ffa276a1e5c763ad04.jpg" alt="Corps member holding phone with NYSC Connect app">
+        </div>
+        <h2>Secure Verification</h2>
+        <p>We've sent a 6-digit verification code to your registered mobile number and email. Please enter it to continue.</p>
+      </div>
+
+      <!-- Right: OTP card -->
+      <div class="verify-card">
+        <div class="verify-icon">✉</div>
+        <h1>Check Your Email</h1>
+        <p class="verify-sub">We've sent a 6-digit verification code to <strong>sarah@email.com</strong>.</p>
+
+        <form class="otp-form">
+          <div class="otp-inputs">
+            <input type="text" class="otp-box" maxlength="1" inputmode="numeric" value="">
+            <input type="text" class="otp-box" maxlength="1" inputmode="numeric" value="">
+            <input type="text" class="otp-box" maxlength="1" inputmode="numeric" value="">
+            <input type="text" class="otp-box" maxlength="1" inputmode="numeric">
+            <input type="text" class="otp-box" maxlength="1" inputmode="numeric">
+            <input type="text" class="otp-box" maxlength="1" inputmode="numeric">
+          </div>
+
+          <p class="otp-meta">Code expires in <strong>02:45</strong> · <a href="#" class="link-accent">Resend Code</a></p>
+
+          <button type="submit" class="btn btn-primary btn-block">Verify Account</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="logo logo-footer">
+          <img src="https://i.ibb.co/p6WG6hxD/NYSC-Connect-Logo.png" alt="NYSC Connect Logo" />
+          <span class="logo-text"><strong>NYSC</strong> Connect</span>
+        </a>
+        <p>Helping corps members find home, community and confidence throughout their service year.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>PRODUCT</h4>
+        <a href="#">Find Accommodation</a>
+        <a href="#">Community</a>
+        <a href="#">Explore Your Area</a>
+        <a href="#">NYSC Guide</a>
+        <a href="#">For Landlords</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>COMPANY</h4>
+        <a href="#">About Us</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>SUPPORT</h4>
+        <a href="#">Help Center</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+
+      <div class="footer-col footer-connect">
+        <h4>CONNECT</h4>
+        <a href="#" class="btn btn-footer">📱 Download App</a>
+        <a href="#" class="btn btn-footer">🏠 For Landlords</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 NYSC Connect. All rights reserved.</p>
+      <p>Made with ♥ for Nigerian Corps Members</p>
+    </div>
+  </footer>
+
+  <script>
+    // Auto-advance focus between OTP boxes as the person types
+    const otpBoxes = document.querySelectorAll('.otp-box');
+    otpBoxes.forEach((box, index) => {
+      box.addEventListener('input', () => {
+        box.value = box.value.replace(/[^0-9]/g, '');
+        if (box.value && index < otpBoxes.length - 1) {
+          otpBoxes[index + 1].focus();
+        }
+      });
+      box.addEventListener('keydown', (e) => {
+        if (e.key === 'Backspace' && !box.value && index > 0) {
+          otpBoxes[index - 1].focus();
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
